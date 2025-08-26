@@ -1,24 +1,29 @@
 apiVersion: v1
-baseDomain: yourdomain.local
+baseDomain: localdomain
 metadata:
-  name: lab
+  name: okd
 compute:
-- hyperthreading: Disabled
-  name: worker
-  replicas: 0
+  - name: worker
+    replicas: 0
+    platform: {}
+    hyperthreading: Disabled
 controlPlane:
-  hyperthreading: Disabled
   name: master
   replicas: 3
-networking:
-  clusterNetwork:
-  - cidr: 10.128.0.0/14
-    hostPrefix: 23
-  networkType: OpenShiftSDN
-  serviceNetwork:
-  - 172.30.0.0/16
+  platform: {}
+  hyperthreading: Disabled
 platform:
-  none: {}
+  none: {} # OKD requires this field to signal no cloud provider
+pullSecret: '{"auths": "replaceme!"}'
+sshKey: "ssh-ed25519 REPLACEME"
+networking:
+  networkType: OVNKubernetes
+  clusterNetwork:
+    - cidr: 10.128.0.0/14
+      hostPrefix: 23
+  serviceNetwork:
+    - 172.30.0.0/16
+  machineNetwork:
+    - cidr: 192.168.1.0/24
 fips: false
-pullSecret: '{"auths" ... }'
-sshKey: 'ssh-rsa AAAA...='
+
