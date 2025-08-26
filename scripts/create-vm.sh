@@ -9,7 +9,7 @@ BRIDGE=vmbr0
 
 PATH=$(pwd)
 BASE=29999
-ADD_STORAGE=52G
+ADD_STORAGE=44G
 
 /usr/sbin/qm clone $BASE $ID --name $NAME
 /usr/sbin/qm set $ID --net0 $NET_TYPE,bridge=$BRIDGE,macaddr=$MACADDR

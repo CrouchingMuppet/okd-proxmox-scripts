@@ -11,6 +11,6 @@ ID_MASTER2=30003
 MAC_MASTER2=52:54:00:00:00:95
 
 ./scripts/create-vm.sh $ID_BOOTSTRAP okd-bootstrap $MAC_BOOTSTRAP
-./scripts/create-vm.sh $ID_MASTER0 okd-master-0 $MAC_MASTER0
-./scripts/create-vm.sh $ID_MASTER1 okd-master-1 $MAC_MASTER1
-./scripts/create-vm.sh $ID_MASTER2 okd-master-2 $MAC_MASTER2
+./scripts/create-vm.sh $ID_MASTER0 okd-cp1 $MAC_MASTER0
+./scripts/create-vm.sh $ID_MASTER1 okd-cp2 $MAC_MASTER1
+./scripts/create-vm.sh $ID_MASTER2 okd-cp3 $MAC_MASTER2

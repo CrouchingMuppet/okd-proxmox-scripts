@@ -1,7 +1,7 @@
 #!/bin/bash
 #Go to https://github.com/openshift/okd/releases/, replace version
 
-VERSION=4.20.0-okd-scos.ec.13
+VERSION=4.20.0-okd-scos.ec.9
 
 wget https://github.com/openshift/okd/releases/download/$VERSION/openshift-client-linux-$VERSION.tar.gz
 wget https://github.com/openshift/okd/releases/download/$VERSION/openshift-install-linux-$VERSION.tar.gz
